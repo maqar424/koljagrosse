@@ -78,4 +78,91 @@ p {
     color: #000;
     text-decoration: none;
     font-size: 13.5px;
-    border-bottom
+    border-bottom: 1px solid #ccc;
+}
+
+/* 4. INTERAKTIVE ZEILEN (250px SPALTE & KEINE PFEILE) */
+details {
+    margin-bottom: 10px;
+}
+
+summary, .static-row {
+    display: grid;
+    grid-template-columns: 250px 1fr; /* Titel nach rechts verschoben */
+    align-items: start;
+    cursor: pointer;
+    list-style: none;
+    outline: none;
+}
+
+/* Brute-Force Entfernung aller Browser-Pfeile */
+summary::-webkit-details-marker { display: none !important; }
+summary::marker { content: ""; display: none !important; }
+
+.date {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.2;
+}
+
+.info {
+    font-size: 14px;
+    line-height: 1.1; /* Sehr enger Zeilenabstand wie im PDF */
+    text-align: left;
+}
+
+.info strong {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 1px; /* Minimaler Abstand zur Zeile darunter */
+}
+
+/* 5. DROP-DOWN INHALT (VOLLE BREITE) */
+.dropdown-content {
+    margin-left: 0; /* Nicht mehr eingerückt */
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 0;
+    margin-top: 10px;
+    background-color: #fcfcfc;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+/* SLIDER & BILDER */
+.horizontal-slider {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.slide-card {
+    flex: 0 0 240px;
+    background: white;
+    padding: 12px;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.03);
+}
+
+.slide-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 3px;
+}
+
+/* 6. KENNTNISSE GRID */
+.lang-grid {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 4px;
+}
+
+/* 7. MOBILE OPTIMIERUNG */
+@media (max-width: 600px) {
+    header, main { padding: 20px; }
+    summary, .static-row { grid-template-columns: 1fr; }
+    .date { font-weight: bold; margin-bottom: 5px; }
+    .dropdown-content { padding: 15px 10px; }
+}
