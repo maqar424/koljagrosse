@@ -88,7 +88,7 @@ details {
 
 summary, .static-row {
     display: grid;
-    grid-template-columns: 250px 1fr; /* Titel nach rechts verschoben */
+    grid-template-columns: 350px 1fr; /* Titel nach rechts verschoben */
     align-items: start;
     cursor: pointer;
     list-style: none;
