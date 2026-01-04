@@ -80,17 +80,37 @@ p {
 }
 
 /* DROPDOWN LOGIK (DIE GEHEIMTÜR) */
-details {
-    margin-bottom: 12px;
-}
-
-summary {
-    display: flex;       /* Erzeugt die zwei Spalten */
-    cursor: pointer;
-    list-style: none;    /* Entfernt Standard-Pfeil */
+/* ELIMINIERT ALLE PFEILE (CHROME, SAFARI, FIREFOX, EDGE) */
+details summary {
+    display: flex;             /* Stellt sicher, dass Spalten nebeneinander stehen */
+    list-style: none;          /* Standard-Befehl zum Entfernen des Pfeils */
     outline: none;
+    user-select: none;         /* Verhindert blaues Markieren beim Klicken */
 }
 
+/* Speziell für Chrome, Safari und Opera */
+details summary::-webkit-details-marker {
+    display: none !important;
+}
+
+/* Speziell für Firefox */
+details summary::marker {
+    display: none !important;
+    content: "";
+}
+
+/* Stellt sicher, dass das Datum links und der Text rechts bleibt (PDF-Optik) */
+.date {
+    width: 200px;              /* Wie im Original-PDF */
+    flex-shrink: 0;
+    font-size: 14.5px;
+    font-weight: normal;
+}
+
+.info {
+    flex-grow: 1;
+    font-size: 14.5px;
+}
 /* Entfernt Pfeile in Safari/Chrome */
 summary::-webkit-details-marker {
     display: none;
