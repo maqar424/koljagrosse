@@ -1,58 +1,150 @@
-/* Grund-Layout (PDF-Optik) */
-body { font-family: Arial, sans-serif; background-color: #f0f0f0; margin: 0; padding: 40px 0; }
-.resume-container { max-width: 800px; margin: 0 auto; background-color: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+/* GRUND-LAYOUT (EXAKT WIE PDF) */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 40px 0;
+    color: #000;
+}
 
-header { background-color: #2c3e50; color: white; padding: 30px 50px; }
-header h1 { margin: 0; font-size: 32px; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 10px; }
-.header-content { display: flex; justify-content: space-between; margin-top: 15px; font-size: 14px; }
-main { padding: 30px 50px; }
-h2 { font-size: 18px; margin: 25px 0 15px 0; }
-hr { border: 0; border-top: 1px solid #ccc; margin: 20px 0; }
+.resume-container {
+    max-width: 850px; /* Breite optimiert für PDF-Proportionen */
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 100vh;
+}
 
-/* Dropdown Grund-Styling (Unsichtbar im PDF-Look) */
-details.exp-item { margin-bottom: 15px; }
-summary { display: flex; cursor: pointer; list-style: none; outline: none; }
-summary::-webkit-details-marker { display: none; }
+/* HEADER (DUNKELBLAU) */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 35px 50px;
+}
 
-.date { width: 200px; flex-shrink: 0; font-size: 14px; }
-.info { font-size: 14px; line-height: 1.4; }
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 10px;
+}
 
-/* Inhaltsbereiche in den Dropdowns */
-.dropdown-inner {
-    margin-left: 200px;
-    padding: 15px;
-    background: #f9f9f9;
-    border-radius: 4px;
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.header-left p, .header-right p {
+    margin: 4px 0;
+}
+
+.header-right {
+    text-align: right;
+}
+
+/* HAUPTTEIL */
+main {
+    padding: 30px 50px;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 25px 0 15px 0;
+    text-align: left;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 4px 0;
+}
+
+.link-centered {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.link-centered a {
+    color: #000;
+    text-decoration: none;
     font-size: 13px;
 }
 
-/* Spezialfall: Horizontaler Slider */
-.slider-wrapper {
-    margin-left: 200px;
-    overflow: hidden;
+/* DROPDOWN LOGIK (DIE GEHEIMTÜR) */
+details {
+    margin-bottom: 12px;
 }
 
+summary {
+    display: flex;       /* Erzeugt die zwei Spalten */
+    cursor: pointer;
+    list-style: none;    /* Entfernt Standard-Pfeil */
+    outline: none;
+}
+
+/* Entfernt Pfeile in Safari/Chrome */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+.date {
+    width: 200px;        /* Fixe Breite wie im PDF */
+    flex-shrink: 0;
+    font-size: 14px;
+}
+
+.info {
+    flex-grow: 1;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* INHALT NACH DEM KLICK */
+.dropdown-content {
+    margin-left: 200px;  /* Text startet exakt bündig unter dem Jobtitel */
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+/* HORIZONTALER SLIDER */
 .horizontal-slider {
     display: flex;
     gap: 15px;
     overflow-x: auto;
-    padding: 10px 0;
-    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+    scrollbar-width: thin;
 }
 
 .slide-card {
-    flex: 0 0 220px;
+    flex: 0 0 250px;
     background: white;
     padding: 10px;
-    border: 1px solid #eee;
-    scroll-snap-align: start;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
 }
 
-.slide-card img { width: 100%; border-radius: 3px; }
+/* SPRACHEN GRID */
+.grid-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
 
-/* Spezialfall: Einzelbild (Zeugnis) */
-.single-img img {
-    display: block;
-    margin-top: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+/* MOBILE OPTIMIERUNG */
+@media (max-width: 600px) {
+    header, main { padding: 20px; }
+    summary { flex-direction: column; }
+    .date { width: 100%; font-weight: bold; }
+    .dropdown-content { margin-left: 0; }
 }
