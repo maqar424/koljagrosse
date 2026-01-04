@@ -91,7 +91,7 @@ details {
 summary {
     display: grid;
     /* 180px für das Datum (links), Rest für den Text (rechts) */
-    grid-template-columns: 5000px 1fr; 
+    grid-template-columns: 7500px 1fr; 
     align-items: start;
     cursor: pointer;
     list-style: none; /* Entfernt Pfeil */
@@ -123,20 +123,26 @@ summary::marker { content: ""; display: none !important; }
 /* Statische Zeilen (für Sektionen ohne Dropdown) */
 .static-row {
     display: grid;
-    grid-template-columns: 500px 1fr;
+    grid-template-columns: 750px 1fr;
     margin-bottom: 12px;
     align-items: start;
 }
 
 /* 5. INHALT NACH DEM KLICK */
 .dropdown-content {
-    /* Startet exakt bündig unter der rechten Text-Spalte */
-    margin-left: 500px; 
-    padding: 15px;
-    background-color: #f9f9f9;
-    border-radius: 4px;
-    margin-top: 5px;
-    font-size: 13.5px;
+    /* Kein margin-left mehr, damit es die volle Breite nutzt */
+    margin-left: 0; 
+    width: 100%;
+    box-sizing: border-box; /* Stellt sicher, dass Padding die Breite nicht sprengt */
+    
+    padding: 20px 0; /* Vertikaler Abstand, damit es sich vom Text abhebt */
+    background-color: #f9f9f9; /* Dezenter Hintergrund für den Bereich */
+    margin-top: 10px;
+    font-size: 14px;
+    
+    /* Optional: Eine feine Linie oben und unten, um den Bereich abzugrenzen */
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 
 /* HORIZONTALER SLIDER */
@@ -144,8 +150,8 @@ summary::marker { content: ""; display: none !important; }
     display: flex;
     gap: 15px;
     overflow-x: auto;
-    padding-bottom: 10px;
-    scrollbar-width: thin;
+    padding: 10px 0;
+    width: 100%;
 }
 
 .slide-card {
