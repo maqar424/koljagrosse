@@ -1,124 +1,45 @@
-/* Grundkonfiguration */
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 20px;
-    color: #333;
+/* ... (Vorheriges CSS bleibt gleich) ... */
+
+.hint {
+    font-size: 12px;
+    color: #666;
+    font-weight: normal;
 }
 
-.resume-container {
-    max-width: 850px;
-    margin: 0 auto;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+details.row-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-/* Header Bereich */
-header {
-    background-color: #2c3e50; /* Das Dunkelblau aus dem PDF */
-    color: white;
-    padding: 40px 50px;
+details.row-item:hover {
+    background-color: #f9f9f9;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 32px;
-    border-bottom: 2px solid #ffffff66;
-    padding-bottom: 10px;
-}
-
-.header-content {
+summary {
     display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    font-size: 14px;
+    list-style: none; /* Entfernt den Standard-Pfeil */
+    outline: none;
 }
 
-.header-left p, .header-right p {
-    margin: 5px 0;
-}
-
-.header-right {
-    text-align: right;
-}
-
-/* Hauptteil */
-main {
-    padding: 40px 50px;
-}
-
-h2 {
-    font-size: 18px;
-    text-transform: none;
-    margin-bottom: 15px;
-    color: #000;
-}
-
-p {
-    line-height: 1.5;
-    margin: 5px 0;
-}
-
-hr {
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 20px 0;
-}
-
-.social-link {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.social-link a {
-    color: #333;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-/* Listen und Reihen */
-.row {
-    display: flex;
-    margin-bottom: 15px;
+summary::-webkit-details-marker {
+    display: none;
 }
 
 .date {
     width: 30%;
     font-size: 14px;
-    color: #333;
+    color: #555;
 }
 
-.details {
+.title {
     width: 70%;
+}
+
+.content {
+    padding: 15px 30% 10px 30%; /* Richtet Text unter dem Titel aus */
     font-size: 14px;
-}
-
-.details strong {
-    font-size: 15px;
-}
-
-/* Spezielles Layout für Sprachen */
-.grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5px;
-}
-
-/* Responsive Anpassung für Handys */
-@media (max-width: 600px) {
-    .header-content, .row {
-        flex-direction: column;
-    }
-    .header-right {
-        text-align: left;
-        margin-top: 15px;
-    }
-    .date, .details {
-        width: 100%;
-    }
-    .date {
-        font-weight: bold;
-        margin-bottom: 5px;
-    }
+    color: #444;
+    line-height: 1.6;
 }
