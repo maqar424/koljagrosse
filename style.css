@@ -110,14 +110,14 @@ summary::marker { content: ""; display: none !important; }
 
 .info {
     font-size: 14px;
-    line-height: 1.4;
+    line-height: 1.1;
     text-align: left;
 }
 
 .info strong {
     display: block; /* Firmenname über der Position wie im PDF */
     font-size: 15px;
-    margin-bottom: 2px;
+    margin-bottom: 1px;
 }
 
 /* Statische Zeilen (für Sektionen ohne Dropdown) */
