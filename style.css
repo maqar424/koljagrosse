@@ -91,7 +91,7 @@ details {
 summary {
     display: grid;
     /* 180px für das Datum (links), Rest für den Text (rechts) */
-    grid-template-columns: 180px 1fr; 
+    grid-template-columns: 250px 1fr; 
     align-items: start;
     cursor: pointer;
     list-style: none; /* Entfernt Pfeil */
@@ -123,7 +123,7 @@ summary::marker { content: ""; display: none !important; }
 /* Statische Zeilen (für Sektionen ohne Dropdown) */
 .static-row {
     display: grid;
-    grid-template-columns: 180px 1fr;
+    grid-template-columns: 250px 1fr;
     margin-bottom: 12px;
     align-items: start;
 }
@@ -131,7 +131,7 @@ summary::marker { content: ""; display: none !important; }
 /* 5. INHALT NACH DEM KLICK */
 .dropdown-content {
     /* Startet exakt bündig unter der rechten Text-Spalte */
-    margin-left: 180px; 
+    margin-left: 250px; 
     padding: 15px;
     background-color: #f9f9f9;
     border-radius: 4px;
