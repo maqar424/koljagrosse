@@ -1,20 +1,22 @@
-/* GRUND-LAYOUT (EXAKT WIE PDF) */
+/* 1. GRUND-LAYOUT (PDF-OPTIK) */
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     margin: 0;
     padding: 40px 0;
     color: #000;
+    -webkit-font-smoothing: antialiased;
 }
 
 .resume-container {
-    max-width: 850px; /* Breite optimiert für PDF-Proportionen */
+    max-width: 850px;
     margin: 0 auto;
     background-color: #fff;
     min-height: 100vh;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* HEADER (DUNKELBLAU) */
+/* 2. HEADER (DUNKELBLAU) */
 header {
     background-color: #2c3e50;
     color: white;
@@ -44,7 +46,7 @@ header h1 {
     text-align: right;
 }
 
-/* HAUPTTEIL */
+/* 3. HAUPTTEIL & ÜBERSCHRIFTEN */
 main {
     padding: 30px 50px;
 }
@@ -68,6 +70,7 @@ p {
     margin: 4px 0;
 }
 
+/* LINK-STYLING (Kurzprofil) */
 .link-centered {
     text-align: center;
     margin: 15px 0;
@@ -76,65 +79,64 @@ p {
 .link-centered a {
     color: #000;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 13.5px;
+    border-bottom: 1px solid #ccc;
 }
 
-/* DROPDOWN LOGIK (DIE GEHEIMTÜR) */
-/* ELIMINIERT ALLE PFEILE (CHROME, SAFARI, FIREFOX, EDGE) */
-details summary {
-    display: flex;             /* Stellt sicher, dass Spalten nebeneinander stehen */
-    list-style: none;          /* Standard-Befehl zum Entfernen des Pfeils */
+/* 4. INTERAKTIVE ZEILEN (PRÄZISES GRID-SYSTEM) */
+details {
+    margin-bottom: 12px;
+}
+
+summary {
+    display: grid;
+    /* 180px für das Datum (links), Rest für den Text (rechts) */
+    grid-template-columns: 180px 1fr; 
+    align-items: start;
+    cursor: pointer;
+    list-style: none; /* Entfernt Pfeil */
     outline: none;
-    user-select: none;         /* Verhindert blaues Markieren beim Klicken */
 }
 
-/* Speziell für Chrome, Safari und Opera */
-details summary::-webkit-details-marker {
-    display: none !important;
-}
-
-/* Speziell für Firefox */
-details summary::marker {
-    display: none !important;
-    content: "";
-}
-
-/* Stellt sicher, dass das Datum links und der Text rechts bleibt (PDF-Optik) */
-.date {
-    width: 200px;              /* Wie im Original-PDF */
-    flex-shrink: 0;
-    font-size: 14.5px;
-    font-weight: normal;
-}
-
-.info {
-    flex-grow: 1;
-    font-size: 14.5px;
-}
-/* Entfernt Pfeile in Safari/Chrome */
-summary::-webkit-details-marker {
-    display: none;
-}
+/* Absolute Unterdrückung der Pfeile in allen Browsern */
+summary::-webkit-details-marker { display: none !important; }
+summary::marker { content: ""; display: none !important; }
 
 .date {
-    width: 200px;        /* Fixe Breite wie im PDF */
-    flex-shrink: 0;
     font-size: 14px;
-}
-
-.info {
-    flex-grow: 1;
-    font-size: 14px;
+    color: #333;
     line-height: 1.4;
 }
 
-/* INHALT NACH DEM KLICK */
+.info {
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.info strong {
+    display: block; /* Firmenname über der Position wie im PDF */
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+/* Statische Zeilen (für Sektionen ohne Dropdown) */
+.static-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    margin-bottom: 12px;
+    align-items: start;
+}
+
+/* 5. INHALT NACH DEM KLICK */
 .dropdown-content {
-    margin-left: 200px;  /* Text startet exakt bündig unter dem Jobtitel */
+    /* Startet exakt bündig unter der rechten Text-Spalte */
+    margin-left: 180px; 
     padding: 15px;
     background-color: #f9f9f9;
     border-radius: 4px;
-    margin-top: 10px;
+    margin-top: 5px;
+    font-size: 13.5px;
 }
 
 /* HORIZONTALER SLIDER */
@@ -151,20 +153,25 @@ summary::-webkit-details-marker {
     background: white;
     padding: 10px;
     border: 1px solid #ddd;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
 }
 
-/* SPRACHEN GRID */
-.grid-content {
+.slide-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 3px;
+}
+
+/* 6. KENNTNISSE GRID (Sprachen) */
+.grid-values {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 120px 1fr;
     gap: 5px;
 }
 
-/* MOBILE OPTIMIERUNG */
+/* 7. MOBILE OPTIMIERUNG */
 @media (max-width: 600px) {
     header, main { padding: 20px; }
-    summary { flex-direction: column; }
-    .date { width: 100%; font-weight: bold; }
+    summary, .static-row { grid-template-columns: 1fr; }
+    .date { font-weight: bold; margin-bottom: 5px; }
     .dropdown-content { margin-left: 0; }
 }
