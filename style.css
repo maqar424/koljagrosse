@@ -91,7 +91,7 @@ details {
 summary {
     display: grid;
     /* 180px für das Datum (links), Rest für den Text (rechts) */
-    grid-template-columns: 7500px 1fr; 
+    grid-template-columns: 750px 1fr; 
     align-items: start;
     cursor: pointer;
     list-style: none; /* Entfernt Pfeil */
