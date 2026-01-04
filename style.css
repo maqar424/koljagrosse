@@ -1,45 +1,148 @@
-/* ... (Vorheriges CSS bleibt gleich) ... */
-
-.hint {
-    font-size: 12px;
-    color: #666;
-    font-weight: normal;
+/* Grundkonfiguration */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px; /* Äußerer Rand für die Website */
+    color: #333;
+    -webkit-font-smoothing: antialiased;
 }
 
+.resume-container {
+    max-width: 800px; /* Etwas schmaler für bessere Proportionen */
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    min-height: 100vh;
+}
+
+/* Header Bereich - Kompakt wie im PDF */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 25px 45px; /* Reduziertes Padding */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    padding-bottom: 8px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+.header-left p, .header-right p {
+    margin: 2px 0;
+}
+
+.header-right {
+    text-align: right;
+}
+
+/* Hauptteil */
+main {
+    padding: 25px 45px;
+}
+
+h2 {
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0 0 10px 0; /* Weniger Abstand unter der Überschrift */
+    color: #000;
+}
+
+p {
+    line-height: 1.4;
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 15px 0; /* Deutlich enger zusammengerückt */
+}
+
+.social-link {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.social-link a {
+    color: #333;
+    text-decoration: none;
+    font-size: 13px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Dropdown / Row Layout */
 details.row-item {
-    padding: 10px 0;
-    border-bottom: 1px solid #f0f0f0;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-details.row-item:hover {
-    background-color: #f9f9f9;
+    margin-bottom: 4px; /* Sehr enge Abstände zwischen den Einträgen */
 }
 
 summary {
     display: flex;
-    list-style: none; /* Entfernt den Standard-Pfeil */
-    outline: none;
+    list-style: none;
+    cursor: pointer;
+    padding: 4px 0;
 }
 
-summary::-webkit-details-marker {
-    display: none;
-}
+summary::-webkit-details-marker { display: none; }
 
 .date {
-    width: 30%;
-    font-size: 14px;
-    color: #555;
+    width: 25%; /* Etwas schmaler */
+    font-size: 13px;
+    color: #333;
 }
 
 .title {
-    width: 70%;
+    width: 75%;
+    font-size: 14px;
 }
 
+/* Inhalt im Dropdown */
 .content {
-    padding: 15px 30% 10px 30%; /* Richtet Text unter dem Titel aus */
-    font-size: 14px;
-    color: #444;
-    line-height: 1.6;
+    padding: 5px 0 10px 25%; /* Text startet exakt unter dem Titel */
+    font-size: 13px;
+    color: #555;
+}
+
+.content ul {
+    margin: 5px 0;
+    padding-left: 20px;
+}
+
+/* Sprachen & IT-Grid */
+.info-grid {
+    display: flex;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.grid-label {
+    width: 25%;
+}
+
+.grid-values {
+    width: 75%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 20px;
+}
+
+/* Mobile Optimierung */
+@media (max-width: 600px) {
+    header, main { padding: 20px; }
+    .header-content { flex-direction: column; }
+    .header-right { text-align: left; margin-top: 10px; }
+    .date, .title, .grid-label, .grid-values { width: 100%; }
+    .content { padding-left: 0; }
 }
