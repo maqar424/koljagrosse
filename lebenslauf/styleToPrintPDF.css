@@ -176,17 +176,37 @@ summary::marker { content: ""; display: none !important; }
 
 /* --- 6. HINWEISE & NAVIGATION --- */
 
+/* A) PDF-Hinweis Text (Rosa) */
+#pdf-recommendation {
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+    font-family: sans-serif;
+    font-size: 14px;
+    color: #ff6b81;
+    line-height: 1.5;
+}
 
+#pdf-recommendation a {
+    color: #ff6b81;
+    text-decoration: underline; 
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+#pdf-recommendation a:hover {
+    color: #ff4757;
+}
 
 /* B) Roter Pfeil links (Click Hint) */
 #click-hint {
     position: absolute;
     left: -220px; 
-    margin-top: -25px; 
+    margin-top: -25px; /* Zeigt auf die erste Zeile */
     width: 200px;
     text-align: right;
-    color: #bbb; 
-    
+    color: #e74c3c; 
     font-weight: bold;
     font-family: sans-serif;
     font-size: 14px;
@@ -247,34 +267,6 @@ details.visited summary::after {
     .dropdown-content { padding: 15px 10px; }
 }
 
-
-/* --- DOWNLOAD BUTTON (Dezent & Mittig) --- */
-#download-btn {
-    display: block;
-    width: fit-content;
-    margin: 30px auto;     /* Zentriert den Button */
-    padding: 10px 20px;
-    
-    color: #95a5a6;        /* Dezentes Grau */
-    text-decoration: none;
-    font-family: sans-serif;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    
-    border: 1px solid #bdc3c7;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-#download-btn:hover {
-    color: #2c3e50;        /* Dunkler beim Drüberfahren */
-    border-color: #2c3e50;
-    background-color: #fff;
-}
-
-
 /* --- 8. DRUCK-LAYOUT (PDF GENERIERUNG) --- */
 @media print {
     /* Grundeinstellungen: Keine Ränder vom Browser */
@@ -310,12 +302,24 @@ details.visited summary::after {
 
     /* Abstände optimieren */
     header { padding: 25px 40px !important; }
-    main { padding: 15px 40px !important; }
+    main { padding: 0px 40px !important; }
     details { margin-bottom: 8px !important; }
     hr { margin: 15px 0 !important; }
     h2 { margin: 20px 0 10px 0 !important; }
 
-   
+    /* PDF-Hinweis (Rosa) erzwingen */
+    #pdf-recommendation {
+        margin-top: 5px !important;    /* Vorher 20px (viel Platz gespart) */
+        margin-bottom: 5px !important; /* Vorher 20px */
+        line-height: 1.2 !important;   /* Zieht die Textzeilen enger zusammen */
+        color: #ff6b81 !important;
+    }
+    
+    #pdf-recommendation a {
+        color: #ff6b81 !important;
+        text-decoration: underline !important;
+        font-weight: bold !important;
+    }
 
     /* Links klickbar machen */
     a {
