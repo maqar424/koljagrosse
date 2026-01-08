@@ -10,26 +10,45 @@
 
 <div class="resume-container">
     <header>
-        <div class="header-top">
-            <h1>Lebenslauf</h1>
-        </div>
-        <div class="header-content">
-            <div class="header-left">
-                <p><strong>Kolja Grosse</strong></p>
-                <p>22.08.1999</p>
+        <details id="header-details">
+            <summary style="display: block;">
+                <div class="header-top">
+                    <h1>Lebenslauf</h1>
+                </div>
+                <div class="header-content">
+                    <div class="header-left">
+                        <p><strong>Kolja Grosse</strong></p>
+                        <p>22.08.1999</p>
+                    </div>
+                    <div class="header-right">
+                        <p>mail@koljagrosse.com</p>
+                        <p>+49 1578 3073168</p>
+                        <p>Sonderburger Str. 41, 51065 Köln</p>
+                    </div>
+                </div>
+            </summary>
+            
+            <div class="dropdown-content" style="background-color: transparent; border: none; padding-top: 20px; text-align: center;">
+                <img src="images/Bewerbungsbild.png" alt="Profilbild Kolja Grosse" 
+                     style="width: 450px; height: 450px; 
+                            object-fit: cover; 
+                            border-radius: 50%; 
+                            border: 4px solid rgba(255,255,255,0.3); 
+                            box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
             </div>
-            <div class="header-right">
-                <p>kolja.grosse@gmail.com</p>
-                <p>+49 1578 3073168</p>
-                <p>Sonderburger Str. 41, 51065 Köln</p>
-            </div>
-        </div>
+        </details>
     </header>
+
+
+    <div id="pdf-recommendation">
+        Ich empfehle die digitale und interaktive Version meines Lebenslaufs.<br>
+        <a href="https://koljagrosse.com/lebenslauf">koljagrosse.com/lebenslauf</a>
+    </div>
 
     <main>
         <section>
             <h2>Kurzprofil</h2>
-            <p>Mit einem abgeschlossenen Studium im Bereich Sportmanagement, Arbeitserfahrungen in verschiedenen Branchen wie der Luftfahrt und Formel 1 und ersten Eindrücken aus meinem angefangenem Informatikstudium, bringe ich ein breitest Spektrum an Erfahrungen mit.</p>
+            <p>Mit einem abgeschlossenen Studium im Bereich Sportmanagement, Arbeitserfahrungen in verschiedenen Branchen wie der Luftfahrt und Formel 1 und ersten Eindrücken aus meinem angefangenem Informatikstudium, bringe ich ein breites Spektrum an Erfahrungen mit.</p>
             <p class="link-centered">
                 <a href="https://www.linkedin.com/in/kolja-grosse/" target="_blank">https://www.linkedin.com/in/kolja-grosse/</a>
             </p>
@@ -38,6 +57,11 @@
 
         <section>
             <h2>Berufserfahrung</h2>
+
+            <div id="click-hint">
+        <span class="hint-text">Hier klicken für mehr Infos</span>
+        <span class="hint-arrow">➔</span>
+    </div>
 
             <details>
                 <summary>
@@ -48,8 +72,8 @@
                     </span>
                 </summary>
                 <div class="dropdown-content">
-                    <p>Über die Münchener Agentur Eventurline GmbH & Co. KG war ich im Jahr 2025 bei 11 von 24 Formel 1 Rennen. Ich habe unter anderem den Team Principal des Sauber Teams gefahren und war Teil des Formel 1 Teams.</p>
-                    <img src="F1Team.JPG" alt="F1_Team" style="width: 100%; height: auto; display: block;">
+                    <p>Chauffeur-Einsatz bei 11 von 24 Formel-1-Rennen im Jahr 2025 über die Eventurline GmbH & Co. KG. Unter Anderem Fahrdienst für den Team Principal des Sauber Teams.</p>
+                    <img src="images/F1Team.JPG" alt="F1_Team" style="width: 100%; height: auto; display: block;">
                 </div>
             </details>
             
@@ -62,18 +86,16 @@
                     </span>
                 </summary>
                 <div class="dropdown-content">
-                    <div class="horizontal-slider">
+                    <div class="horizontal-slider slider-centered">
                         <div class="slide-card">
-                            <img src="EURO2024.jpg" alt="EURO2024">
+                            <img src="images/EURO2024.jpg" alt="EURO2024">
                         </div>
                         
                         <div class="slide-card">
-                            <p>Bei der Fußball-EM 2024 in Deutschland hab ich an den Flughäfen Köln-Bonn, Düsseldorf, Dortmund und Münster die Arrivals und Departures der teilnehmenden Nationalmannschaften koordiniert.</p>
+                            <p>Operative Koordination der An- und Abreisen der teilnehmenden Nationalmannschaften während der UEFA EURO 2024 an mehreren Flughäfen und Bahnhöfen in Nordrhein-Westfalen.</p>
                         </div>
 
-                        <div class="slide-card">
-                            <img src="AAD.jpg" alt="ArrivalAndDeparture">
-                        </div>
+                        
                     </div>
                 </div>
             </details>
@@ -87,12 +109,12 @@
                     </span>
                 </summary>
                 <div class="dropdown-content">
-                    <div class="horizontal-slider">
+                    <div class="horizontal-slider slider-centered">
                         <div class="slide-card">
-                            <p>In Excel habe ich die Reisekosten der Eurowings Piloten und Cabincrew an allen Standorten visuel aufbereitet und eine Prognose für die Zukunft erstellt.</p>
+                            <p>Analyse, Visualisierung und Forecasting der Reisekosten von Piloten und Cabin Crew über alle Eurowings-Standorte hinweg mittels Excel.</p>
                         </div>
                         <div class="slide-card">
-                            <img src="EurowingsLaptop.JPG" alt="Eurowings">
+                            <img src="images/EurowingsLaptop.JPG" alt="Eurowings">
                         </div>
                     </div>
 
@@ -110,7 +132,14 @@
                     </span>
                 </summary>
                 <div class="dropdown-content">
-                    <p>Ich habe bei der Planung und Durchführung von drei Tennisturnieren als Praktikant meine ersten Erfahrungen in der Eventbranche gemacht.</p>
+                     <div class="horizontal-slider slider-centered">
+                        <div class="slide-card">
+                            <img src="images/emotion.png" alt="e|motions Sport">
+                        </div>
+                        <div class="slide-card">
+                            <p>Unterstützung bei der Planung und Durchführung von drei ATP- und WTA-Tennisturnieren als Praktikant bei der emotion sports GmbH.</p>
+                        </div>
+                        
                 </div>
             </details>
 
@@ -125,11 +154,12 @@
                     <span class="date">10/2024 - heute</span>
                     <span class="info">
                         <strong>Universität zu Köln</strong>
-                        Bachelor Informatik
+                        Bachelor Informatik (vorläufig 3,1)
                     </span>
                 </summary>
                 <div class="dropdown-content">
-                    <p>Aktuelle Studieninhalte und Informatik-Projekte.</p>
+                    <p>Bisher Belegte Module: Java-Programmierung, Datenbanken, Datenvisualisierung, Mathematik und Logik sowie Softwaretechnik.</p>
+                    <img src="documents/UniKoeln.png" alt="Uni_Koeln" style="width: 100%; height: auto; display: block;">
                 </div>
             </details>
 
@@ -139,26 +169,25 @@
                     <span class="date">2022</span>
                     <span class="info">
                         <strong>State University of New York - Cortland</strong>
-                        Auslandsjahr Sportmanagement
+                        Sportmanagement (GPA 3,10 ~ 2,0 in Deutschland)
                     </span>
                 </summary>
                 <div class="dropdown-content">
-                    <p>Für zwei Semester habe ich im Bundesstaat New York studiert.</p>
-                    <img src="SUNY.png" alt="SUNY_Transcript_of_Records" style="width: 100%; height: auto; display: block;">
+                    <img src="documents/SUNY.png" alt="SUNY_Transcript_of_Records" style="width: 100%; height: auto; display: block;">
                 </div>
             </details>
 
             
             <details>
                 <summary>
-                    <span class="date">10/2019 - 03/2024</span>
+                    <span class="date">10/2019 - 08/2024</span>
                     <span class="info">
                         <strong>Deutsche Sporthochschule Köln</strong>
                         Bachelor Sportmanagment (2,5)
                     </span>
                 </summary>
                 <div class="dropdown-content">
-                    <img src="Spoho_Bachelor.png" alt="Bachelorzeugnis" style="width: 100%; height: auto; display: block;">
+                    <img src="documents/Spoho_Bachelor.png" alt="Bachelorzeugnis" style="width: 100%; height: auto; display: block;">
                 </div>
             </details>
 
@@ -172,7 +201,7 @@
                 </summary>
                 <div class="dropdown-content">
                     <h4 style="margin-top: 0;">Abiturzeugnis</h4>
-                    <img src="Abitur.png" alt="Abiturzeugnis Kolja Grosse" style="width: 100%; max-width: 800px; display: block; margin: 0 auto; border: 1px solid #ddd;">
+                    <img src="documents/Abitur.png" alt="Abiturzeugnis Kolja Grosse" style="width: 100%; max-width: 800px; display: block; margin: 0 auto; border: 1px solid #ddd;">
                 </div>
             </details>
 
@@ -180,28 +209,29 @@
         </section>
 
 <section>
-            <h2>Kenntnisse</h2>
-            <div class="static-row">
-                <span class="date">Sprachen</span>
-                <div class="info">
-                    <div class="lang-grid">
-                        <span>Deutsch</span> <span>Muttersprache</span>
-                        <span>Englisch</span> <span>fließend</span>
-                        <span>Französisch</span> <span>Grundlagen</span>
-                    </div>
-                </div>
+    <h2>Kenntnisse</h2>
+    
+    <div class="static-row" style="cursor: default;">
+        <span class="date">Sprachen</span>
+        <div class="info">
+            <div class="lang-grid">
+                <span>Deutsch</span> <span>Muttersprache</span>
+                <span>Englisch</span> <span>verhandlungssicher</span>
+                <span>Französisch</span> <span>Grundlagen</span>
             </div>
-            
-            <div class="static-row" style="margin-top: 10px;">
-                <span class="date">IT-Kenntnisse</span>
-                <div class="info">
-                    Java Programmierkenntnisse,<br>
-                    Microsoft Office, insbesondere Excel,<br>
-                    Adobe Photoshop, Lightroom & Premiere Pro
-                </div>
-            </div>
-            <hr>
-        </section>
+        </div>
+    </div>
+    
+    <div class="static-row" style="margin-top: 10px; cursor: default;">
+        <span class="date">IT-Kenntnisse</span>
+        <div class="info">
+            Java Programmierkenntnisse,<br>
+            Microsoft Office, insbesondere Excel,<br>
+            Adobe Suite, insbesondere Photoshop
+        </div>
+    </div>
+    <hr>
+</section>
 
 
          <section>
@@ -217,16 +247,16 @@
                         
                         <div class="slide-card">
                             <h4>Luftfahrt & Logistik</h4>
-                            <p>Frachtflughäfen sind für mich persönlich wahnsinnig spannende Orte an welchen nichts dem Zufall überlassen ist.</p>
+                            <p>Frachtflughäfen faszinieren mich, weil dort Abläufe höchst effizient geplant werden müssen. Jede Entscheidung hat direkte Auswirkungen auf Kosten, Zeitpläne und Prozesse.</p>
                         </div>
 
                         <div class="slide-card">
-                            <img src="747.jpg" alt="UPS Boeing 747 at CGN Airport">
+                            <img src="images/747.jpg" alt="UPS Boeing 747 at CGN Airport">
                         </div>
 
                         <div class="slide-card">
                             <h4>Digitaliserung</h4>
-                            <p>Die Digitalisierung von analogen Prozessen finde ich sehr erfüllend. Digital ist jedoch nicht zwingend besser als analog.</p>
+                            <p>Die Digitalisierung ist ein extrem wichtiges Thema, für das ich mich begeistern kann, da sie Prozesse effizienter machen kann.</p>
                         </div>
 
 
@@ -236,7 +266,7 @@
                         </div>
 
                         <div class="slide-card">
-                            <img src="F1Car.JPG" alt="Formula 1 Car">
+                            <img src="images/F1Car.JPG" alt="Formula 1 Car">
                         </div>
 
                     
@@ -256,5 +286,44 @@
     </main>
 </div>
 
+<button id="download-btn" onclick="downloadPDF()">PDF herunterladen</button>
+
+
+
+<script>
+    // 1. PDF Download
+    function downloadPDF() {
+        window.print();
+    }
+
+    // 2. Akkordeon & Pfeil-Logik
+    document.addEventListener("DOMContentLoaded", function() {
+        const allDetails = document.querySelectorAll('details');
+        const redArrow = document.getElementById('click-hint');
+
+        allDetails.forEach(detail => {
+            detail.addEventListener('toggle', function() {
+                // Sobald ein Menü geöffnet wird...
+                if (this.open) {
+                    
+                    // A) Roter Pfeil links verschwindet für immer
+                    if (redArrow) redArrow.style.display = 'none';
+
+                    // B) NEU: Dem aktuellen Menü die Klasse "visited" geben.
+                    // Das CSS sorgt dann dafür, dass der graue Pfeil rechts verschwindet.
+                    // Da die Klasse bleibt, kommt der Pfeil nie wieder zurück.
+                    this.classList.add('visited');
+
+                    // C) Alle anderen Dropdowns schließen (Akkordeon)
+                    allDetails.forEach(other => {
+                        if (other !== this && other.open) {
+                            other.removeAttribute('open');
+                        }
+                    });
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
