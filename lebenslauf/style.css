@@ -233,18 +233,75 @@ details.visited summary::after {
     right: -80px;        
 }
 
-/* --- 7. RESPONSIVE DESIGN (MOBILE) --- */
+/* --- 7. RESPONSIVE DESIGN (MOBILE & TABLET) --- */
+
+/* A) Tablet & kleine Laptops (unter 1100px) */
 @media (max-width: 1100px) {
-    /* Hinweise ausblenden, wenn kein Platz am Rand ist */
     #click-hint { display: none; }
     summary::after { display: none; }
 }
 
-@media (max-width: 600px) {
-    header, main { padding: 20px; }
-    summary, .static-row { grid-template-columns: 1fr; }
-    .date { font-weight: bold; margin-bottom: 5px; }
-    .dropdown-content { padding: 15px 10px; }
+/* B) Smartphones (unter 850px) */
+@media (max-width: 850px) {
+    
+    /* 1. Hintergrund & Container aufräumen */
+    body {
+        padding: 0;
+        background-color: #fff; 
+    }
+
+    .resume-container {
+        width: 100%;           
+        min-height: auto;      
+        margin: 0;
+        box-shadow: none;      
+        border: none;
+    }
+
+    /* 2. Abstände verringern */
+    header, main { 
+        padding: 20px 25px; 
+    }
+
+    header h1 {
+        font-size: 26px;      
+    }
+
+    /* 3. Layout der Zeilen (Datum & Job) untereinander statt nebeneinander */
+    summary, .static-row { 
+        grid-template-columns: 1fr; 
+        gap: 5px;
+    }
+
+    /* Das Datum optisch abheben */
+    .date { 
+        font-weight: bold; 
+        margin-bottom: 2px;
+        color: #555;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .info {
+        padding-left: 0;       
+    }
+
+    /* 4. Dropdown-Inhalt */
+    .dropdown-content { 
+        padding: 15px 0; 
+    }
+    
+    /* Header-Inhalt (Name & Kontakt) untereinander */
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .header-right {
+        text-align: left; 
+    }
+    #mobile-hint { display: flex; }
 }
 
 
@@ -274,6 +331,37 @@ details.visited summary::after {
     background-color: #fff;
 }
 
+/* --- MOBILE POPUP (Standard: Versteckt) --- */
+#mobile-hint {
+    display: none; /* Auf Desktop unsichtbar */
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 400px;
+    background-color: rgba(44, 62, 80, 0.95); /* Dunkelblau, leicht transparent */
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 10000;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+#mobile-hint button {
+    background: #fff;
+    color: #2c3e50;
+    border: none;
+    padding: 5px 15px;
+    margin-left: 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
 /* --- 8. DRUCK-LAYOUT (PDF GENERIERUNG) --- */
 @media print {
